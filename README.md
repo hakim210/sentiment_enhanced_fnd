@@ -114,24 +114,43 @@ HCI_project/
 
 ## 7. 참고 문헌 (References)
 [1] X. Xu, X. Li, T. Wang, and Y. Jiang, "AMPLE: Emotion-Aware Multimodal Fusion Prompt Learning for Fake News Detection," *arXiv preprint arXiv:2410.15591*, 2024.
+
 [2] Cambridge Dictionary, "False news," [Online]. Available: https://dictionary.cambridge.org/dictionary/english/false-news
+
 [3] Ethical Journalism Network, "What is Fake News?," [Online]. Available: https://ethicaljournalismnetwork.org/resources/publications/ejn-report-on-fake-news
+
 [4] PolitiFact, "PolitiFact Statements Dataset," [Online]. Available: https://www.politifact.com/
+
 [5] A. K. Dey, S. Saha, and S. Saha, "Sentiment Analysis for Fake News Detection by Means of Neural Networks," *Journal of Biomedical Informatics*, vol. 109, p. 103514, 2020.
+
 [6] M. Yang, L. Flores, H. Hunma, and B. Trevisan, "Exploring the Impact of Sentiment Analysis on Current Methods of Fake News Detection," *Yale Undergraduate Research Journal*, vol. 3, no. 1, 2022.
+
 [7] A. Kuila and S. Sarkar, "Deciphering Political Entity Sentiment in News with Large Language Models: Zero-Shot and Few-Shot Strategies," in *Proceedings of the 4th Workshop on NLP for Political Text (PoliticalNLP 2024)*, 2024.
+
 [8] S. Roy, D. Paul, and C. Das, "Fake News Detection: Comparative Evaluation of BERT-like Models and Large Language Models with Generative AI-Annotated Data," *arXiv preprint arXiv:2412.14276*, 2024.
+
 [9] S. Bondielli and F. Marcelloni, "Sentiment Analysis for Fake News Detection," *ProQuest*, 2021.
+
 [10] K. Shu, A. Sliva, S. Wang, J. Tang, and H. Liu, "Fake News Detection on Social Media: A Data Mining Perspective," *SIGKDD Explorations*, vol. 19, no. 1, pp. 22–36, 2017.
+
 [11] ISOT Research Lab, "ISOT Fake News Dataset," [Online]. Available: https://www.uvic.ca/engineering/ece/isot/datasets/fake-news/index.php
+
 [12] A. J. Bidgoly, "FNID: Fake News Inference Dataset," *IEEE DataPort*, 2020.
+
 [13] S. V. Balshetwar, R. S. Abilash, and R. D. Jermisha, "Fake news detection in social media based on sentiment analysis using classifier techniques," *Multimedia Tools and Applications*, vol. 82, pp. 18653–18678, 2023.
+
 [14] I. K. Sastrawan, I. P. A. Bayupati, and D. M. S. Arsa, "Detection of fake news using deep learning CNN–RNN based methods," *ICT Express*, vol. 8, no. 3, pp. 354–360, 2022.
+
 [15] A. Saha, T. Khondakar, M. B. Miah, S. A. Ahsan, and D. Nandi, "A Comparative Analysis on Fake News Detection Methods," in *Proceedings of the 2022 International Conference on Computer, Communication, Chemical, Material and Electronic Engineering (IC4ME2)*, 2022, pp. 1–6.
+
 [16] "A Semi-supervised Fake News Detection using Sentiment Encoding," *arXiv preprint arXiv:2407.19332*, 2024.
+
 [17] "Domain Adaptive Fake News Detection via Reinforcement Learning," *arXiv preprint arXiv:2202.08159*, 2024.
+
 [18] "Cross-Domain Fake News Detection based on Dual-Granularity Adversarial Training," in *Proceedings of the 29th International Conference on Computational Linguistics (COLING 2025)*, 2025.
+
 [19] F. Hamborg, "NewsMTSC: Target-dependent sentiment classification in news articles," GitHub, 2021. [Online]. Available: https://github.com/fhamborg/NewsMTSC
+
 [20] H. Hamed, A. G. Al-Khafaji, and S. Al-Sumaidaee, "Fake News Detection Model on Social Media by Leveraging Sentiment Analysis of News Content and Emotion Analysis of Users’ Comments," *Sensors*, vol. 23, 2023.
+
 [21] D. Vilares, A. O. C. E. Alonso, and M. G. de la Fuente, "Sentiment analysis for fake news detection," *Electronics*, vol. 10, 2021.
-```
