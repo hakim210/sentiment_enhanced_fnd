@@ -139,3 +139,4 @@ HCI_project/
 [20] H. Hamed, A. G. Al-Khafaji, and S. Al-Sumaidaee, "Fake News Detection Model on Social Media by Leveraging Sentiment Analysis of News Content and Emotion Analysis of Users’ Comments," *Sensors*, vol. 23, 2023.
 [21] D. Vilares, A. O. C. E. Alonso, and M. G. de la Fuente, "Sentiment analysis for fake news detection," *Electronics*, vol. 10, 2021.
 ```
+# sentiment_enhanced_fnd
