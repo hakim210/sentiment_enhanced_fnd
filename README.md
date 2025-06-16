@@ -139,4 +139,3 @@ HCI_project/
 1. F. Hamborg, "NewsMTSC: Target-dependent sentiment classification in news articles," GitHub, 2021. [Online]. Available: https://github.com/fhamborg/NewsMTSC
 1. H. Hamed, A. G. Al-Khafaji, and S. Al-Sumaidaee, "Fake News Detection Model on Social Media by Leveraging Sentiment Analysis of News Content and Emotion Analysis of Users’ Comments," *Sensors*, vol. 23, 2023.
 1. D. Vilares, A. O. C. E. Alonso, and M. G. de la Fuente, "Sentiment analysis for fake news detection," *Electronics*, vol. 10, 2021.
-```
