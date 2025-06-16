@@ -117,7 +117,6 @@ HCI_project/
 *   **멀티모달 확장**: AMPLE 논문의 원래 아이디어처럼, 이미지 정보를 CLIP 인코더로 추출하고 이를 텍스트/감성 정보와 융합하여 모델의 성능을 더욱 고도화
 
 ## 7. 참고 문헌 (References)
-## 7. 참고 문헌 (References)
 
 1. X. Xu, X. Li, T. Wang, and Y. Jiang, "AMPLE: Emotion-Aware Multimodal Fusion Prompt Learning for Fake News Detection," *arXiv preprint arXiv:2410.15591*, 2024.
 1. Cambridge Dictionary, "False news," [Online]. Available: https://dictionary.cambridge.org/dictionary/english/false-news
@@ -141,4 +140,3 @@ HCI_project/
 1. H. Hamed, A. G. Al-Khafaji, and S. Al-Sumaidaee, "Fake News Detection Model on Social Media by Leveraging Sentiment Analysis of News Content and Emotion Analysis of Users’ Comments," *Sensors*, vol. 23, 2023.
 1. D. Vilares, A. O. C. E. Alonso, and M. G. de la Fuente, "Sentiment analysis for fake news detection," *Electronics*, vol. 10, 2021.
 ```
-# sentiment_enhanced_fnd
