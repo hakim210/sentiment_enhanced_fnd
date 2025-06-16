@@ -17,8 +17,7 @@
 
 모델은 **(A) 데이터 입력**, **(B) 감성-텍스트 융합 특성 추출**, **(C) 최종 분류**의 3단계 파이프라인으로 구성됩니다. 특히 (B) 단계에서 감성 정보와 텍스트 의미 정보를 융합했습니다.
 
-![diagram](https://github.com/user-attachments/assets/e052c789-a432-457b-a321-bb3901169cb9)
-
+<img src="https://github.com/user-attachments/assets/e052c789-a432-457b-a321-bb3901169cb9" alt="diagram" width="500">
 
 ## 3. 파일 및 폴더 구조
 
