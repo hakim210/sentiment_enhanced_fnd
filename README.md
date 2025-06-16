@@ -17,13 +17,15 @@
 
 모델은 **(A) 데이터 입력**, **(B) 감성-텍스트 융합 특성 추출**, **(C) 최종 분류**의 3단계 파이프라인으로 구성됩니다. 특히 (B) 단계에서 감성 정보와 텍스트 의미 정보를 융합했습니다.
 
-```
-insert image
-```
+![diagram](https://github.com/user-attachments/assets/e052c789-a432-457b-a321-bb3901169cb9)
+
 
 ## 3. 파일 및 폴더 구조
 
 프로젝트는 소스 코드, 데이터, 실험 스크립트, 결과물로 구분됩니다.
+*  PolitiFact와 GossipCop 데이터셋의 4, 16, 64-shot 실험결과인 `evaluate_on_datasets.py`의 출력은 `Evaluation.ipynb`,
+*  모델의 Ablation Study 실험결과인 `evaluate_experiments.py`의 출력은 `Evaluate_All.ipynb`
+   에서 확인하실 수 있습니다.
 
 ```
 HCI_project/
@@ -41,8 +43,8 @@ HCI_project/
 │   ├── politifact_dataset.csv
 │   └── gossipcop_dataset.csv
 │
-├── evaluate_experiments.py      # 🔬 실험 실행 및 결과 생성 메인 스크립트
-├── calculate_metrics.py         # 📊 생성된 결과 파일을 분석하고 성능 지표를 계산/시각화하는 스크립트
+├── evaluate_on_datasets.py      # 🔬 실험 실행 및 결과 생성 메인 스크립트
+├── evaluate_experiments.py      # 📊 Ablation Study 실험 실행 및 결과 생성 스크립트
 ├── main.py                      # ⚙️ 모델의 기본 파이프라인 및 초기화 로직
 ├── README.md                    # 📄 (현재 파일) 프로젝트 설명서
 └── requirements.txt             # 📜 필요한 라이브러리 목록
@@ -54,8 +56,7 @@ HCI_project/
 
 1.  **저장소 복제**
     ```
-    git clone <url>
-    cd @@@
+    git clone [<url>](https://github.com/hakim210/sentiment_enhanced_fnd.git)
     ```
 2.  **필수 라이브러리 설치**
     ```
@@ -71,26 +72,23 @@ HCI_project/
      `evaluate_on_datasets.py` 스크립트를 실행하여 PolitiFact 데이터셋과 Gossipcop 데이터셋에 대한 모델의 적용 결과를 CSV 파일로 생성합니다.
     ```
     python3 evaluate_on_datasets.py
+    ```
+
     
 3.  **성능 지표 분석**
     `evaluate_experiments.py` 스크립트를 실행하여 PolitiFact 데이터셋에 대한 실험을 수행하고 결과 CSV 파일들을 생성합니다.
     ```
     python3 evaluate_experiments.py
-
+    ```
 
 ## 5. 실험 내용 및 의의
 
 `evaluate_on_datasets.py` 스크립트의 실행결과로 PolitiFact 데이터셋과 Gossipcop 데이터셋의 실험 결과에 대한 분석결과(Confusion Matrix, Accuracy, Precision, Recall, F1-score)는 Evaluation.ipynb 파일에서 확인할 수 있습니다.
 
 본 프로젝트에서는 모델의 성능과 각 구성 요소의 효과를 검증하기 위해 다음과 같은 실험을 추가로 수행했습니다.
+`evaluation_experiments.py`
 
-### 실험 1: 클래스 불균형 문제 해결
-
-*   **가설**: PolitiFact 데이터셋에서 모델이 '가짜 뉴스'를 잘 탐지하지 못하고 '진짜 뉴스'로 편향되는 현상은 클래스 불균형 때문일 수 있다.
-*   **방법**: 소수 클래스인 '가짜 뉴스(label=1)'를 틀렸을 때 더 큰 페널티를 부여하는 **가중 손실 함수(Weighted Cross-Entropy Loss)**를 적용하여 모델을 학습시켰습니다.
-*   **의의**: 모델이 단순히 전체 정확도만 높이는 것이 아니라, 더 중요한 소수 클래스(가짜 뉴스)에 대한 탐지 능력(재현율, Recall)을 향상시킬 수 있는지 검증합니다.
-
-### 실험 2: 감성 분석의 효과 검증 (Ablation study 1)
+### 실험 1: 감성 분석의 효과 검증 (Ablation study 1)
 
 *   **가설**: 우리가 설계한 "감성 분석 → 가중치 계산 → 어텐션 융합" 파이프라인은 가짜 뉴스 탐지 성능에 긍정적인 영향을 미친다.
 *   **방법**: AMPLE 논문의 **-EE (Emotional Elements 제거)** 실험과 동일하게[1,3], 아래 두 모델의 성능을 F1-Score로 비교했습니다[5].
@@ -98,13 +96,20 @@ HCI_project/
     2.  **Without Emotion**: 감성 정보를 사용하지 않고(`sentiment_score=1.0`), 오직 텍스트 임베딩만으로 예측하는 모델
 *   **의의**: 감성 정보가 실제로 모델 성능에 얼마나 기여하는지를 정량적으로 측정하여, 프로젝트의 핵심 아이디어의 유효성을 입증합니다.
 
-### 실험 3: 부정 감정 강화 로직 검증 (Ablation study 2)
+### 실험 2: 부정 감정 강화 로직 검증 (Ablation study 2)
 
 *   **가설**: 우리가 독자적으로 설계한 "부정 감정 강화 로직(`BETA` 계수)"은 가짜 뉴스 탐지에 추가적인 성능 향상을 가져온다.
 *   **방법**: 감성 분석을 사용하되, 오직 `BETA` 계수의 효과만을 비교했습니다.
     1.  **With Beta Weighting**: `BETA=1.5`로 설정하여 부정 감성을 강화한 모델
     2.  **Without Beta Weighting**: `BETA=1.0`으로 설정하여 긍정/부정 감성을 동등하게 취급한 모델
 *   **의의**: AMPLE 논문을 넘어서는 우리만의 독창적인 기여가 실제로 유효한지 검증하는 가장 중요한 실험입니다.
+
+### 실험 3: 클래스 불균형 문제 해결
+
+*   **가설**: PolitiFact 데이터셋에서 모델이 '가짜 뉴스'를 잘 탐지하지 못하고 '진짜 뉴스'로 편향되는 현상은 클래스 불균형 때문일 수 있다.
+*   **방법**: 소수 클래스인 '가짜 뉴스(label=1)'를 틀렸을 때 더 큰 페널티를 부여하는 **가중 손실 함수(Weighted Cross-Entropy Loss)**를 적용하여 모델을 학습시켰습니다.
+*   **의의**: 모델이 단순히 전체 정확도만 높이는 것이 아니라, 더 중요한 소수 클래스(가짜 뉴스)에 대한 탐지 능력(재현율, Recall)을 향상시킬 수 있는지 검증합니다.
+
 
 ## 6. 향후 연구 방향 (Future Work)
 
