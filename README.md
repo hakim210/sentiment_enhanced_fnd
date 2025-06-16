@@ -7,7 +7,7 @@
 ### 주요 목표
 이 프로젝트는 다음과 같은 가설을 설정하고 검증하는 것을 목표로 합니다.
 
-1.  **LLM 활용 감성 분석**: 기존 연구는 `TextBlob`이라는 lexicon-based 방식으로 감성점수를 추출했으나, 본 연구에서는 **대규모 언어 모델(LLM)을 활용**하여 더 깊고 정확한 감성 분석을 수행하고, 이를 통해 모델 성능을 개선할 수 있는 가능성을 탐구했습니다[6][7][22]. (LLM 적용 과정에서 긴 텍스트 처리를 위한 'Chunk & Aggregate' 기법을 활용했습니다.)
+1.  **LLM 활용 감성 분석**: 기존 연구는 `TextBlob`이라는 lexicon-based 방식으로 감성점수를 추출했으나, 본 연구에서는 **대규모 언어 모델(LLM)을 활용**하여 더 깊고 정확한 감성 분석을 수행하고, 이를 통해 모델 성능을 개선할 수 있는 가능성을 탐구했습니다[6][7][22].
 2.  **부정 감성 강화**: "가짜 뉴스는 특히 부정적인 감성을 더 강하게 나타난다"는 가설[1, 7]에 기반하여, 감성 점수 계산 시 **부정 감성에 더 높은 가중치(`BETA` 계수)를 부여**하는 새로운 로직을 설계하고 그 효과를 검증합니다.
 3.  **커스텀 어텐션 융합**: 추출된 감성 정보를 텍스트의 의미 정보와 효과적으로 융합하기 위해, 감성 가중치를 Self-Attention 스코어에 직접 주입하는 **`SentimentGuidedAttention`** 메커니즘을 설계했습니다.
 
@@ -82,10 +82,10 @@ HCI_project/
 
 ## 5. 실험 내용 및 의의
 
-`evaluate_on_datasets.py` 스크립트의 실행결과로 PolitiFact 데이터셋과 Gossipcop 데이터셋의 실험 결과에 대한 분석결과(Confusion Matrix, Accuracy, Precision, Recall, F1-score)는 Evaluation.ipynb 파일에서 확인할 수 있습니다.
+`evaluate_on_datasets.py` 스크립트의 실행결과로 PolitiFact 데이터셋과 Gossipcop 데이터셋의 실험에 대한 분석결과는 `Evaluation.ipynb` 파일에서 확인할 수 있습니다.
 
 본 프로젝트에서는 모델의 성능과 각 구성 요소의 효과를 검증하기 위해 다음과 같은 실험을 추가로 수행했습니다.
-`evaluation_experiments.py`
+`evaluation_experiments.py` 스크립트의 실행결과로 하단의 세 실험에 대한 분석결과는 `Evaluate_ALL.ipynb` 파일에서 확인할 수 있습니다.
 
 ### 실험 1: 감성 분석의 효과 검증 (Ablation study 1)
 
@@ -139,4 +139,3 @@ HCI_project/
 [20] H. Hamed, A. G. Al-Khafaji, and S. Al-Sumaidaee, "Fake News Detection Model on Social Media by Leveraging Sentiment Analysis of News Content and Emotion Analysis of Users’ Comments," *Sensors*, vol. 23, 2023.
 [21] D. Vilares, A. O. C. E. Alonso, and M. G. de la Fuente, "Sentiment analysis for fake news detection," *Electronics*, vol. 10, 2021.
 ```
-# sentiment_enhanced_fnd
