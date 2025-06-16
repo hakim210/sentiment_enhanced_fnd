@@ -55,7 +55,7 @@ HCI_project/
 
 1.  **저장소 복제**
     ```
-    git clone [<url>](https://github.com/hakim210/sentiment_enhanced_fnd.git)
+    git clone https://github.com/hakim210/sentiment_enhanced_fnd.git
     ```
 2.  **필수 라이브러리 설치**
     ```
